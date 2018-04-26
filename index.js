@@ -23,6 +23,10 @@ console.log('CERT_PATH:', CERT_PATH)
 console.log('PORT:', PORT)
 console.log('DATABASE_PATH:', DATABASE_PATH)
 
+app.get('/health-check', async function (req, res) {
+  res.sendStatus(200)
+})
+
 app.post('/matrix-password-reset', async function (req, res) {
   const { username, password, token } = req.body
 
