@@ -92,5 +92,6 @@ WHERE name = "${username}"
 
 https.createServer({
   key: fs.readFileSync(path.join(CERT_PATH + '/privkey.pem')),
-  cert: fs.readFileSync(path.join(CERT_PATH, '/cert.pem'))
+  cert: fs.readFileSync(path.join(CERT_PATH, '/cert.pem')),
+  ca: fs.readFileSync(path.join(CERT_PATH, '/chain.pem'))
 }, app).listen(5000)
